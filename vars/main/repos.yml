@@ -9,8 +9,16 @@ _virtualbox_repos_create:
   CentOS_8: []
   RedHat_8: []
   Fedora_31: []
-  Debian_10: []
-  Ubuntu_18: []
+  Debian_10:
+    - repo: "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian buster contrib"
+      filename: "/etc/apt/sources.list.d/virtualbox.list"
+      gpgkey: "https://www.virtualbox.org/download/oracle_vbox_2016.asc"
+      id: "B9F8D658297AF3EFC18D5CDFA2F683C52980AECF"
+  Ubuntu_18:
+    - repo: "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bionic contrib"
+      filename: "/etc/apt/sources.list.d/virtualbox.list"
+      gpgkey: "https://www.virtualbox.org/download/oracle_vbox_2016.asc"
+      id: "B9F8D658297AF3EFC18D5CDFA2F683C52980AECF"
 
 # Repo files to download
 _virtualbox_repos_download:

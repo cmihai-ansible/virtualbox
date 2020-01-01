@@ -63,17 +63,27 @@ _virtualbox_packages_prereq:
     - kernel-headers
     - kernel-devel
     - dkms
-  Debian_10: []
-  Ubuntu_18: []
+  Debian_10:
+    - build-essential
+    - linux-headers-generic
+  Ubuntu_18:
+    - build-essential
+    - linux-headers-generic
 
 # Install packages
 _virtualbox_packages_install:
-  all:
+  all: []
+  CentOS_7:
     - "VirtualBox-{{ virtualbox_version_major }}"
-  CentOS_7: []
-  RedHat_7: []
-  CentOS_8: []
-  RedHat_8: []
-  Fedora_31: []
-  Debian_10: []
-  Ubuntu_18: []
+  RedHat_7:
+    - "VirtualBox-{{ virtualbox_version_major }}"
+  CentOS_8:
+    - "VirtualBox-{{ virtualbox_version_major }}"
+  RedHat_8:
+    - "VirtualBox-{{ virtualbox_version_major }}"
+  Fedora_31:
+    - "VirtualBox-{{ virtualbox_version_major }}"
+  Debian_10:
+    - "virtualbox-{{ virtualbox_version_major }}"
+  Ubuntu_18:
+    - "virtualbox-{{ virtualbox_version_major }}"

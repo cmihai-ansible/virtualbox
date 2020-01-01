@@ -8,8 +8,43 @@ virtualbox_setup_users: true
 virtualbox_users:
   - ansible
 
-# Virtualbox configure
+# Virtualbox configure (enable user, install headers and build kernel module)
 virtualbox_configure: false
+virtualbox_install_headers: false
+
+virtualbox_headers_install:
+  all: []
+  CentOS_7:
+    - kernel-headers
+    - kernel-devel
+    - "kernel-headers-{{ ansible-kernel }}"
+    - "kernel-devel-{{ ansible-kernel }}"
+  RedHat_7:
+    - kernel-headers
+    - kernel-devel
+    - "kernel-headers-{{ ansible-kernel }}"
+    - "kernel-devel-{{ ansible-kernel }}"
+  CentOS_8:
+    - kernel-headers
+    - kernel-devel
+    - "kernel-headers-{{ ansible-kernel }}"
+    - "kernel-devel-{{ ansible-kernel }}"
+  RedHat_8:
+    - kernel-headers
+    - kernel-devel
+    - "kernel-headers-{{ ansible-kernel }}"
+    - "kernel-devel-{{ ansible-kernel }}"
+  Fedora_31:
+    - kernel-headers
+    - kernel-devel
+    - "kernel-headers-{{ ansible-kernel }}"
+    - "kernel-devel-{{ ansible-kernel }}"
+  Debian_10:
+    - linux-headers-generic
+    - "linux-headers-{{ ansible-kernel }}"
+  Ubuntu_18:
+    - linux-headers-generic
+    - "linux-headers-{{ ansible-kernel }}"
 
 # Virtualbox version
 virtualbox_version_major: "6.1"
