@@ -65,10 +65,8 @@ _virtualbox_packages_prereq:
     - dkms
   Debian_10:
     - build-essential
-    - linux-headers-generic
   Ubuntu_18:
     - build-essential
-    - linux-headers-generic
 
 # Install packages
 _virtualbox_packages_install:

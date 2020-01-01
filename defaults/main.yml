@@ -40,7 +40,6 @@ virtualbox_headers_install:
     - "kernel-headers-{{ ansible-kernel }}"
     - "kernel-devel-{{ ansible-kernel }}"
   Debian_10:
-    - linux-headers-generic
     - "linux-headers-{{ ansible-kernel }}"
   Ubuntu_18:
     - linux-headers-generic
